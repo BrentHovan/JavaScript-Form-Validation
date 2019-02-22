@@ -1,0 +1,82 @@
+<!-- 
+Build an HTML5 Form that does the following: 
+
+Add a Header with a title, "Customer Information"
+Collects the users First Name, Last Name, and E-mail
+Add a button labeled, "Submit"
+Style your page with a .css file
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="JS-FormValidation.css">
+			<title>Customer Information</title>
+
+		</head>
+
+		<body>
+
+			<div class="header">
+				<h1>Customer Information</h1>
+			</div>
+
+			<div class="main">
+				<form>
+					<label for="fname">First Name</label>
+					<input type="text" id="fname" name="firstname" placeholder="Customer's first name...">
+						<br>
+							<br>	
+								<label for="lname">Last Name</label>
+								<input type="text" id="lname" name="lastname" placeholder="Customer's last name...">
+									<br>
+										<br>						
+											<label for="email">Email</label>
+											<input type="text" id="email" name="email" placeholder="Customer's email address...">
+												<br>
+													<br>
+														<br>
+															<button type="submit" onclick="validateForm()">Submit</button>
+															<br>
+															</form>
+
+														</div>
+
+														<div class="footer">
+															<p>Disclaimer: by clicking submit you consent to the sale of your data on the dark web.</p>
+														</div>
+
+														<script>
+function validateForm() {
+  var x, text;
+  var y, text;
+  var z, text;
+
+  // Get the values of the input fields by id
+  x = document.getElementById("fname").value;
+  y = document.getElementById("lname").value;
+  z = document.getElementById("email").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (x == "" || y == "" || z == "") {
+    alert("Invalid submission. All fields must be filled out.");
+	return false
+  } 
+  else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(z)) {
+    alert("Invalid submission. Please enter a valid email address.");
+	return false
+  }
+  else {
+    alert("Information successfully recorded.");
+	return false
+  }
+}
+														</script>
+
+
+													</body>
+
+
+												</html>
